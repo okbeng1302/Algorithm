@@ -5,14 +5,16 @@ package com.algorithm.order;
  * 
  * @author apple
  */
-public class Solution1 {
+public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] arr = { 10, 7, 8, 8, 5, 13 };
+        int[] arr = { 10, 7, 8, 8, 5, 13, 13 };
         int[] result = sortByBubbleMinToMax(arr);
         for (int item : result) {
             System.out.print(item + " ");
         }
+        System.out.println();
+
         int[] result1 = sortByBubbleMaxToMin(arr);
         for (int item : result1) {
             System.out.print(item + " ");
@@ -20,18 +22,18 @@ public class Solution1 {
     }
 
     /**
-     * 冒泡排序 从小到大
+     * 冒泡排序 从小到大 时间复杂度 O(n2) 最坏 O(n2) 最好O(n) 空间复杂度 O(1) 稳定排序
      */
     public static int[] sortByBubbleMinToMax(int[] arr) {
         if (arr.length == 0) {
             return arr;
         }
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
@@ -45,12 +47,12 @@ public class Solution1 {
         if (arr.length == 0) {
             return arr;
         }
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] < arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
         }
