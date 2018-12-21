@@ -13,11 +13,8 @@ public class SelectKthValue {
         int[] arr = { 10, 5, 3, 6, 9, 511 };
         int k = 3;
         int result = findKOne(arr, k);
-
         System.out.println(result);
-
         int result1 = findKTwo(arr, k);
-
         System.out.println(result1);
     }
 
