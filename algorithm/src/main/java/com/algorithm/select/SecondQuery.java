@@ -1,7 +1,7 @@
 package com.algorithm.select;
 
 /**
- * 二分查找
+ * 二分查找 复杂度 Olog(n)
  * 
  * @author apple
  */
